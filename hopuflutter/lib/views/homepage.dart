@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:social_media_flutter/social_media_flutter.dart';
 import 'EventPage.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,19 +14,34 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body:Center(
         child: Column(
-        mainAxisAlignment: MainAxisAlignment.center, // Dikeyde ortalamayı ayarlar
+        mainAxisAlignment: MainAxisAlignment.start, // Dikeyde ortalamayı ayarlar
         children: [
+          SizedBox(height: MediaQuery.of(context).size.height/10),
           Text(
-            'GLOBAL TALENT AGENCY FOR ELECTRONIC MUSIC',
+            'Global Talent Agency for Electronic Music',
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 18),
+            style: TextStyle(fontSize: MediaQuery.of(context).size.height/12,color: Colors.white),
           ),
+          SizedBox(height: MediaQuery.of(context).size.height/10),
           ElevatedButton(
-            onPressed: widget.onSeeAllEventsPressed,
-            child: Text('See All Events'),
-          ),
+  onPressed: widget.onSeeAllEventsPressed,
+  style: ElevatedButton.styleFrom(
+    primary: Colors.black, // Butonun arka plan rengi
+    onPrimary: Colors.red, // Butonun yazı rengi
+    side: BorderSide(color: Colors.red), // Butonun kenarlık rengi
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(2.0), // Butonun köşe yarıçapı
+    ),
+    padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height/20, horizontal: MediaQuery.of(context).size.height/20),
+    
+  ),
+  child: Text('See All Events',
+  style: TextStyle(fontSize: 25),),
+)
+
         ],
       ),
       ),
